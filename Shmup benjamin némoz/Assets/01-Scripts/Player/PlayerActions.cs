@@ -115,7 +115,6 @@ public class PlayerActions : MonoBehaviour
     void StartCharging(bool lethal)
     {
         //TODO Put vfx
-        Debug.Log("Started charging");
 
         charging = true;
         chargingLethal = lethal;
@@ -124,7 +123,6 @@ public class PlayerActions : MonoBehaviour
     void StopCharging()
     {
         //TODO put vfx
-        Debug.Log("Stopped charging");
 
         charging = false;
         chargingFor = 0.0f;
