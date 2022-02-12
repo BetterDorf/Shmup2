@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         //charge the next level
-        if (_enemyOnScreen.Count == 0)
+        if (_enemyOnScreen.Count == 0 && _actualLevel < _levels.Count)
         {
             _spawner.ResetSpawn();
 
@@ -32,6 +32,9 @@ public class LevelManager : MonoBehaviour
             {
                 _spawner.Spawn(ref _enemyOnScreen,spawnable._number,spawnable._enemy);
             }
+
+                _actualLevel++;
+
         }
 
         _enemyOnScreen.RemoveAll(x => !x);

@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
 
     public void ResetSpawn()
     {
-        _availableSpawnPoint = _spawnPoint;
+        _availableSpawnPoint = new List<GameObject>(_spawnPoint);
     }
 
     public void Spawn(ref List<GameObject> enemyList, int numbers, GameObject enemyGameObject)
