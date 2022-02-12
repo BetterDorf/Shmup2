@@ -145,6 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  damage: 3
+  damage: 5
   lethal: 1
   pierce: 0
