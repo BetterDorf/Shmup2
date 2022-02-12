@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3469094187364806616, guid: 6d743dc7dedc2464795bff339ad0de51, type: 3}
       propertyPath: startLife
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3469094187364806617, guid: 6d743dc7dedc2464795bff339ad0de51, type: 3}
       propertyPath: m_Name
@@ -68,12 +68,16 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4835457470223751733, guid: 6d743dc7dedc2464795bff339ad0de51, type: 3}
+      propertyPath: margin
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835457470223751733, guid: 6d743dc7dedc2464795bff339ad0de51, type: 3}
       propertyPath: downSpeed
-      value: 1.4
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 4835457470223751733, guid: 6d743dc7dedc2464795bff339ad0de51, type: 3}
       propertyPath: timeBetweenShots
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d743dc7dedc2464795bff339ad0de51, type: 3}

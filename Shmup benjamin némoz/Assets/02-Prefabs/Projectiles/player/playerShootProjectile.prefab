@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d410036932ef9a44da9de02b0c8134fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 17
   damage: 5
   lethal: 1
   pierce: 0

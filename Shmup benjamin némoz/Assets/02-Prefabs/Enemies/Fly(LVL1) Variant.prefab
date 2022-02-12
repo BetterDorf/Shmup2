@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.84
       objectReference: {fileID: 0}
+    - target: {fileID: 2831820139384326826, guid: 20d0debdab4216145a74fd965c489319, type: 3}
+      propertyPath: startLife
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2831820139384326827, guid: 20d0debdab4216145a74fd965c489319, type: 3}
       propertyPath: m_Name
       value: Fly(LVL1) Variant
@@ -29,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2831820139384326870, guid: 20d0debdab4216145a74fd965c489319, type: 3}
       propertyPath: timeBetweenShots
-      value: 3
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 2831820139384326871, guid: 20d0debdab4216145a74fd965c489319, type: 3}
       propertyPath: m_RootOrder

@@ -64,8 +64,12 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5101486342375270931, guid: 9b0ba3d30a9d4424aa23d956ef5c9de5, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 409234874911205523, guid: 15bd6649acb803441b111096448e9fa9, type: 3}
+    - target: {fileID: 5101486342375270931, guid: 9b0ba3d30a9d4424aa23d956ef5c9de5, type: 3}
       propertyPath: timeBetweenShots
-      value: 2
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 5101486342375271021, guid: 9b0ba3d30a9d4424aa23d956ef5c9de5, type: 3}
       propertyPath: m_Sprite
@@ -77,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5101486342375271023, guid: 9b0ba3d30a9d4424aa23d956ef5c9de5, type: 3}
       propertyPath: startLife
-      value: 12
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b0ba3d30a9d4424aa23d956ef5c9de5, type: 3}

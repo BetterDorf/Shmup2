@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d410036932ef9a44da9de02b0c8134fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 22
   damage: 10
   lethal: 1
   pierce: 1

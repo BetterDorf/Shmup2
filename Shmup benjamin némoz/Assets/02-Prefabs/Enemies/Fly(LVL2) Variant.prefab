@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141790076308442671, guid: 4a03d60b11bdd2d428849bcf1034612b, type: 3}
       propertyPath: m_Name
-      value: Fly(LVL2)
+      value: Fly(LVL2) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 141790076308442706, guid: 4a03d60b11bdd2d428849bcf1034612b, type: 3}
       propertyPath: speed
@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141790076308442706, guid: 4a03d60b11bdd2d428849bcf1034612b, type: 3}
       propertyPath: timeBetweenShots
-      value: 2.5
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 141790076308442707, guid: 4a03d60b11bdd2d428849bcf1034612b, type: 3}
       propertyPath: m_RootOrder

@@ -12,6 +12,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1430757711, guid: be8558b16384dd241a728e27798aa189, type: 3}
+      propertyPath: margin
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430757711, guid: be8558b16384dd241a728e27798aa189, type: 3}
       propertyPath: centerDistance
       value: 0.2
       objectReference: {fileID: 0}
@@ -25,11 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5834323118176592517, guid: be8558b16384dd241a728e27798aa189, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.24038315
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5834323118176592517, guid: be8558b16384dd241a728e27798aa189, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7712052
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5834323118176592517, guid: be8558b16384dd241a728e27798aa189, type: 3}
       propertyPath: m_LocalPosition.z
@@ -69,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5834323118176592633, guid: be8558b16384dd241a728e27798aa189, type: 3}
       propertyPath: m_Name
-      value: Bee(lvl1)
+      value: Bee(lvl1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5834323118176592634, guid: be8558b16384dd241a728e27798aa189, type: 3}
       propertyPath: m_Sprite

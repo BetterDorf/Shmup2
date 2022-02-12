@@ -35,7 +35,7 @@ public class ShipBehaviour : MonoBehaviour
 
     protected virtual void StartShooting()
     {
-        timeToShoot = Random.Range(timeBetweenShots / 2.0f, timeBetweenShots);
+        timeToShoot = Random.Range(timeBetweenShots / 4.0f, timeBetweenShots);
     }
 
     protected virtual void Shoot()
@@ -46,7 +46,7 @@ public class ShipBehaviour : MonoBehaviour
 
     protected virtual void StartMoving()
     {
-        rb.velocity = new Vector2(1 * speed, -0.05f * speed);
+        rb.velocity = new Vector2(1 * speed, -0.1f * speed);
     }
 
 
