@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 8148799391021650839}
   - component: {fileID: 8148799391021650824}
   - component: {fileID: 8148799391021650838}
+  - component: {fileID: 444019191}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 8148799391021650829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.05, y: -3.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 8148799391617910777}
   m_Father: {fileID: 0}
@@ -100,8 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4728372718843e54bba696da9ed87020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 10
-  holdSpeed: 6
+  speed: 19
 --- !u!114 &8148799391021650828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,9 +161,9 @@ MonoBehaviour:
     m_ActionName: Default/Shoot[/Keyboard/j,/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8148799391021650838}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
-        m_MethodName: ArrestInput
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -240,13 +240,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 8148799391617910777}
-  projectilesFolderPath: Assets/02-Prefabs/Projectiles/
+  projectilesFolderPath: Assets/02-Prefabs/Projectiles/Player/
   shootProjPath: playerShootProjectile.prefab
   superShootProjPath: playerShootProjectileS.prefab
   arrestProjPath: playerArrestProjectile.prefab
   superArrestProjPath: playerArrestProjectileS.prefab
   shootCooldown: 0.2
   chargeTime: 0.5
+--- !u!114 &444019191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148799391021650829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf20119ef465784b8d3b2f5b4c16f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startLife: 3
 --- !u!1 &8148799391617910778
 GameObject:
   m_ObjectHideFlags: 0

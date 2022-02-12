@@ -34,7 +34,7 @@ public class ShipHealth : MonoBehaviour
             return false;
     }
 
-    protected void Die()
+    protected virtual void Die()
     {
         Destroy(gameObject);
     }
@@ -42,5 +42,10 @@ public class ShipHealth : MonoBehaviour
     protected void Arrest()
     {
         Debug.Log(name + " is arrested");
+    }
+
+    protected virtual void OnBecameInvisible()
+    {
+       Destroy(gameObject);
     }
 }

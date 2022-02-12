@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bounds
   layers:
   - Default
   - TransparentFX
@@ -11,9 +12,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Enemies
+  - Projectiles
+  - EnemyProjectiles
   - 
   - 
   - 
@@ -38,15 +39,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: ForeGround
-    uniqueID: 159084413
-    locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Bounds
+    uniqueID: 588996229
     locked: 0
   - name: BackGround
     uniqueID: 2906031945
     locked: 0
-  - name: Bounds
-    uniqueID: 588996229
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: ForeGround
+    uniqueID: 159084413
     locked: 0
