@@ -6,8 +6,6 @@ using UnityEngine.InputSystem.Interactions;
 
 public class LevelManager : MonoBehaviour
 {
-
-
     private List<GameObject> _enemyOnScreen = new List<GameObject>();
 
     [SerializeField] private List<Level> _levels;
@@ -34,7 +32,8 @@ public class LevelManager : MonoBehaviour
             {
                 _spawner.Spawn(ref _enemyOnScreen,spawnable._number,spawnable._enemy);
             }
-            
         }
+
+        _enemyOnScreen.RemoveAll(x => !x);
     }
 }
