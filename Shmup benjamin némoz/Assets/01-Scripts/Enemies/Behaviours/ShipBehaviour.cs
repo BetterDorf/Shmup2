@@ -15,7 +15,7 @@ public class ShipBehaviour : MonoBehaviour
 
     protected Rigidbody2D rb;
 
-    private void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         StartMoving();
