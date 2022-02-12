@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ShipCircleBehaviour : ShipBehaviour
 {
-    [SerializeField] float turnSpeed;
     [SerializeField] float centerDistance;
+    [SerializeField] float margin = 0.01f;
 
     bool clockwise = true;
 
@@ -28,8 +28,15 @@ public class ShipCircleBehaviour : ShipBehaviour
     {
         base.Update();
 
+        //Rotate around center
         Vector2 toCenter = new Vector2(center.x - transform.position.x, center.y - transform.position.y);
         rb.velocity = new Vector2(toCenter.y, -toCenter.x).normalized * speed * (clockwise ? 1 : -1);
+
+        if (Camera.main.WorldToViewportPoint(transform.position).y > 1 - margin && rb.velocity.y > 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y);
+            clockwise = !clockwise;
+        }
     }
 
     protected override void Bounce()
