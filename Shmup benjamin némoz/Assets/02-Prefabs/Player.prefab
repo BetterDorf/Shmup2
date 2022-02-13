@@ -277,6 +277,8 @@ MonoBehaviour:
   superArrestProjPath: playerArrestProjectileS.prefab
   shootCooldown: 0.2
   chargeTime: 0.5
+  chargeEffect: {fileID: 7022046154835281715, guid: f2f87806e1795d0438e38852e38c0d02, type: 3}
+  maxBuffer: 3
 --- !u!114 &8336605280882362935
 MonoBehaviour:
   m_ObjectHideFlags: 0

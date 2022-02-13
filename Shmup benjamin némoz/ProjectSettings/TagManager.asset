@@ -39,11 +39,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Bounds
-    uniqueID: 588996229
-    locked: 0
   - name: BackGround
     uniqueID: 2906031945
+    locked: 0
+  - name: Bounds
+    uniqueID: 588996229
     locked: 0
   - name: Default
     uniqueID: 0

@@ -28,9 +28,16 @@ public class PlayerActions : MonoBehaviour
     float chargingFor = 0.0f;
     bool charging = false;
     bool chargingLethal = true;
+    bool charged = false;
 
-    bool bufferedCharge = false;
-    bool bufferedShoot = false;
+    [SerializeField] GameObject chargeEffect;
+    GameObject chargeEffectInstance;
+
+    [SerializeField] int maxBuffer = 2;
+    int bufferedCharge = 0;
+    int bufferedShoot = 0;
+
+    PlayerInput playerInput;
 
     private void Start()
     {
@@ -39,6 +46,8 @@ public class PlayerActions : MonoBehaviour
 
         arrestProj = AssetDatabase.LoadAssetAtPath(projectilesFolderPath + arrestProjPath, typeof(GameObject));
         superArrestProj = AssetDatabase.LoadAssetAtPath(projectilesFolderPath + superArrestProjPath, typeof(GameObject));
+
+        playerInput = GetComponent<PlayerInput>();
     }
 
     private void Update()
@@ -47,8 +56,15 @@ public class PlayerActions : MonoBehaviour
         if (timeToShoot > 0.0f)
             timeToShoot -= Time.deltaTime;
 
-        if (charging)
+        if (charging && !charged)
+        {
             chargingFor += Time.deltaTime;
+            
+            if (chargingFor > chargeTime)
+            {
+                Charged();
+            }
+        }
     }
 
     public void ShootInput(InputAction.CallbackContext context)
@@ -78,18 +94,19 @@ public class PlayerActions : MonoBehaviour
             }
         }
         //Buffer the input, only one shot can be buffered
-        else
+        else if (bufferedShoot < maxBuffer)
         {
-            if (context.started && !bufferedCharge)
+            if (context.started)
             {
                 //if we started charging while we couldn't, start charging as soon as we can
-                StartCoroutine(BufferedCharge(lethal));
-                bufferedCharge = true;
+                if (bufferedCharge == 0)
+                    StartCoroutine(BufferedCharge(lethal));
+                bufferedCharge++;
             }
-            else if (context.canceled && !bufferedShoot)
+            else if (context.canceled)
             {
                 //if we release even before we could shoot, shoot immediately when we get the chance
-                bufferedShoot = true;
+                bufferedShoot++;
             }
         }
     }
@@ -98,32 +115,52 @@ public class PlayerActions : MonoBehaviour
     {
         do
         {
-            yield return null;
-        } while (timeToShoot >= 0.0f);
+            do
+            {
+                yield return null;
+            } while (timeToShoot >= 0.0f);
 
-        StartCharging(lethal);
-        bufferedCharge = false;
+            StartCharging(lethal);
+            bufferedCharge--;
 
-        if (bufferedShoot)
-        {
-            yield return null;
-            Shoot(lethal);
-            bufferedShoot = false;
-        }
+            if (bufferedShoot > 0)
+            {
+                yield return null;
+                Shoot(lethal);
+                bufferedShoot--;
+            }
+        } while (bufferedCharge > 0);
+
+        bufferedShoot = 0;
     }
 
     void StartCharging(bool lethal)
     {
-        //TODO Put vfx
+        //Safety to avoid duplicates
+        if (chargeEffectInstance != null)
+            Destroy(chargeEffectInstance);
+
+        //VFX
+        chargeEffectInstance = Instantiate(chargeEffect, shootPoint);
 
         charging = true;
         chargingLethal = lethal;
     }
 
+    void Charged()
+    {
+        //VFX
+        chargeEffectInstance.GetComponent<Charge>().Charged();
+
+        charged = true;
+    }
+
     void StopCharging()
     {
-        //TODO put vfx
+        //VFX
+        chargeEffectInstance.GetComponent<Charge>().Release();
 
+        charged = false;
         charging = false;
         chargingFor = 0.0f;
     }
@@ -135,7 +172,6 @@ public class PlayerActions : MonoBehaviour
 
         //Find out what we are going to shoot
         Object projectile;
-        bool charged = chargingFor >= chargeTime;
         if (lethal)
         {
             if (charged)
