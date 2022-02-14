@@ -67,6 +67,14 @@ PrefabInstance:
       propertyPath: points
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 6779212425326699301, guid: 6b0b252d480483548871f368e485a03b, type: 3}
+      propertyPath: time
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779212425326699301, guid: 6b0b252d480483548871f368e485a03b, type: 3}
+      propertyPath: randomInterval
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7430329515615192305, guid: 6b0b252d480483548871f368e485a03b, type: 3}
       propertyPath: speed
       value: 5

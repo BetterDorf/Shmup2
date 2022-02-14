@@ -87,7 +87,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5834323118176592633}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4298474829e824644b4ec76e44393ab9, type: 3}
   m_Name: 
@@ -96,5 +96,5 @@ MonoBehaviour:
   timeBetweenShots: 2
   shootPoint: {fileID: 5834323117051424933}
   projectile: {fileID: 409234874911205523, guid: c4d8d038afcc5ca45a8449f147101968, type: 3}
-  turnSpeed: 0.1
   centerDistance: 0.3
+  margin: 0.01

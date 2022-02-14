@@ -87,6 +87,14 @@ PrefabInstance:
       propertyPath: timeBetweenShots
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7324022055647764990, guid: 7897be7dacd38da42834e856db9cbc69, type: 3}
+      propertyPath: time
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324022055647764990, guid: 7897be7dacd38da42834e856db9cbc69, type: 3}
+      propertyPath: randomInterval
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7563921586273132391, guid: 7897be7dacd38da42834e856db9cbc69, type: 3}
       propertyPath: points
       value: 1200

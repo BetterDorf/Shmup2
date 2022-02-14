@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: points
       value: 700
       objectReference: {fileID: 0}
+    - target: {fileID: 3401061738854452748, guid: 9b0ba3d30a9d4424aa23d956ef5c9de5, type: 3}
+      propertyPath: time
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401061738854452748, guid: 9b0ba3d30a9d4424aa23d956ef5c9de5, type: 3}
+      propertyPath: randomInterval
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5101486342375270930, guid: 9b0ba3d30a9d4424aa23d956ef5c9de5, type: 3}
       propertyPath: m_RootOrder
       value: 0

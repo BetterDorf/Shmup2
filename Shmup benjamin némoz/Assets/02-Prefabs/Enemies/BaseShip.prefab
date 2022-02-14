@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2831820139384326826}
   - component: {fileID: 2831820139384326870}
   - component: {fileID: -4328502544274206640}
+  - component: {fileID: -3552702369125650743}
   m_Layer: 6
   m_Name: BaseShip
   m_TagString: Untagged
@@ -125,7 +126,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2831820139384326827}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -185,7 +186,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2831820139384326827}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52546acd2baf81b4cb576507b62e1d8d, type: 3}
   m_Name: 
@@ -208,3 +209,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructionEffect: {fileID: 6361919857450768824, guid: 697fc1e248da2694bb12d2a0cf31acf7, type: 3}
   points: 100
+--- !u!114 &-3552702369125650743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831820139384326827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e751438f7ebb24549a228581f57076dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 1
+  grey: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}

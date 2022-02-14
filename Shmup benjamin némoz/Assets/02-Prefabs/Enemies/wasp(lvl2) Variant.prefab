@@ -83,5 +83,13 @@ PrefabInstance:
       propertyPath: points
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 6474579386294012859, guid: 6d743dc7dedc2464795bff339ad0de51, type: 3}
+      propertyPath: time
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474579386294012859, guid: 6d743dc7dedc2464795bff339ad0de51, type: 3}
+      propertyPath: randomInterval
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d743dc7dedc2464795bff339ad0de51, type: 3}
