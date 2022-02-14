@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text lifeText;
 
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject endMenu;
 
     [HideInInspector]
     public bool paused = false;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1.0f;
         instance = this;
     }
 
@@ -51,8 +53,31 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
-        //TODO everything
+        endMenu.GetComponentInChildren<Text>().text = "Victory";
+
+        if (BackgroundEffects.instance != null)
+            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.blu, 0.0f);
+
+        EndGame();
+    }
+
+    public void Lose()
+    {
+        endMenu.GetComponentInChildren<Text>().text = "Defeat";
+
+        if (BackgroundEffects.instance != null)
+            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.softPurple, 0.0f);
+
+        EndGame();
+    }
+
+    void EndGame()
+    {
+        Time.timeScale = 0.0f;
+        paused = true;
         pausable = false;
+
+        endMenu.SetActive(true);
     }
 
     public void AddScore(int amount)

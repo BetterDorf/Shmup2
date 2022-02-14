@@ -10,8 +10,17 @@ public class BackgroundEffects : MonoBehaviour
     [SerializeField] Sprite normalSprite;
     [SerializeField] Sprite purpleSprite;
     [SerializeField] Sprite softPurpleSprite;
+    [SerializeField] Sprite bluSprite;
 
     public static BackgroundEffects instance;
+
+    public enum Type
+    {
+        normal,
+        purple,
+        softPurple,
+        blu
+    }
 
     private void Start()
     {
@@ -24,13 +33,6 @@ public class BackgroundEffects : MonoBehaviour
         instance = this;
     }
 
-    public enum Type
-    {
-        normal,
-        purple,
-        softPurple
-    }
-
     Sprite ConvertTypeToSprite(Type type)
     {
         switch(type)
@@ -41,6 +43,8 @@ public class BackgroundEffects : MonoBehaviour
                 return purpleSprite;
             case Type.softPurple:
                 return softPurpleSprite;
+            case Type.blu:
+                return bluSprite;
             default:
                 Debug.Log("Texture type not implemented");
                 return normalSprite;

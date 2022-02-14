@@ -6,9 +6,8 @@ public class PlayerHealth : ShipHealth
 {
     protected override void Die()
     {
-        if (BackgroundEffects.instance != null)
-            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.softPurple, 0.0f);
-        Time.timeScale = 0.0f;
+        if (GameManager.instance)
+            GameManager.instance.Lose();
     }
 
     protected override void OnBecameInvisible()
@@ -34,7 +33,9 @@ public class PlayerHealth : ShipHealth
 
     public override void DamageEffect()
     {
+        base.DamageEffect();
+
         if (BackgroundEffects.instance != null)
-            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.purple, 0.2f);
+            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.purple, damageEffectDuration);
     }
 }
