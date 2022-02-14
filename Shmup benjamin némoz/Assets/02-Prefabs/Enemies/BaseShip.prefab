@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2831820139384326869}
   - component: {fileID: 2831820139384326826}
   - component: {fileID: 2831820139384326870}
+  - component: {fileID: -4328502544274206640}
   m_Layer: 6
   m_Name: BaseShip
   m_TagString: Untagged
@@ -193,3 +194,17 @@ MonoBehaviour:
   timeBetweenShots: 2
   shootPoint: {fileID: 2831820138259159287}
   projectile: {fileID: 409234874911205523, guid: c4d8d038afcc5ca45a8449f147101968, type: 3}
+--- !u!114 &-4328502544274206640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831820139384326827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b957110ab3934de479bab41f7740fbe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destructionEffect: {fileID: 6361919857450768824, guid: 697fc1e248da2694bb12d2a0cf31acf7, type: 3}
+  points: 100

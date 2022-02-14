@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: timeBetweenShots
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1701508042945730858, guid: 6907d4d220eb7e241b05d131ac64c2bc, type: 3}
+      propertyPath: points
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 8304158581866202029, guid: 6907d4d220eb7e241b05d131ac64c2bc, type: 3}
       propertyPath: m_RootOrder
       value: 0

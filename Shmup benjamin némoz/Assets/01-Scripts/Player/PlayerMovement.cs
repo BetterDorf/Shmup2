@@ -10,39 +10,23 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     PlayerInput playerInput;
 
+    Transform visual;
+    [SerializeField] float rotationWhenTurning = 15.0f;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         playerInput = GetComponent<PlayerInput>();
+
+        visual = GetComponentInChildren<SpriteRenderer>().transform;
     }
 
     private void Update()
     {
-        rb.velocity = new Vector2(speed * playerInput.actions.FindAction("Strafe").ReadValue<float>(), 0);
+        float turnValue = playerInput.actions.FindAction("Strafe").ReadValue<float>();
+        rb.velocity = new Vector2(speed * turnValue, 0);
+
+        visual.rotation = Quaternion.Euler(-Vector3.forward * rotationWhenTurning * turnValue);
     }
-
-    //public void MoveInput(InputAction.CallbackContext context)
-    //{
-    //    Debug.Log("Message sent");
-    //    //Check what we performed with the input
-    //    switch(context.phase)
-    //    {
-    //        case InputActionPhase.Started:
-    //            speed = startSpeed * Mathf.Sign(context.ReadValue<float>());
-    //            Debug.Log("Started");
-    //            break;
-    //        case InputActionPhase.Performed:
-    //            speed = holdSpeed * Mathf.Sign(context.ReadValue<float>());
-    //            Debug.Log("Performed");
-    //            break;
-    //        case InputActionPhase.Canceled:
-    //            speed = 0.0f;
-    //            Debug.Log("Canceled");
-    //            break;
-    //    }
-
-    //    //Set our velocity
-    //    rb.velocity = new Vector2(speed, 0);
-    //}
 }

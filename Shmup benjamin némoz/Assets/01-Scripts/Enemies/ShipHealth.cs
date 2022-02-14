@@ -24,6 +24,15 @@ public class ShipHealth : MonoBehaviour
             else
                 Arrest();
         }
+        else
+        {
+            DamageEffect();
+        }
+    }
+
+    public virtual void DamageEffect()
+    {
+        //TODO add flashing on sprite
     }
 
     protected bool isDead()
@@ -36,6 +45,7 @@ public class ShipHealth : MonoBehaviour
 
     protected virtual void Die()
     {
+        GetComponent<ShipDestruction>().LaunchDestructionEffect();
         Destroy(gameObject);
     }
 

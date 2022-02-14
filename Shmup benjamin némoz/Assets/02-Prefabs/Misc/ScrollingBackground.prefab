@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b841f2445eab99499299279d5e0e6a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
 --- !u!1 &9003084252076645936
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9003084252076645943}
+  - component: {fileID: 767894573}
   m_Layer: 0
   m_Name: ScrollingBackground
   m_TagString: Untagged
@@ -129,6 +130,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &767894573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9003084252076645936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b71c35a79f30c843a44b0419a4f7f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSprite: {fileID: 21300000, guid: c85817761389cbc4abe448a8e362df18, type: 3}
+  purpleSprite: {fileID: 21300000, guid: 34ba2db6f72ed0644b5e137cc011b95e, type: 3}
+  softPurpleSprite: {fileID: 21300000, guid: 079813e4a4d6aee448efc6057a8d276d, type: 3}
 --- !u!1 &9003084252079946740
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b841f2445eab99499299279d5e0e6a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
 --- !u!1 &9003084252265345986
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,4 +336,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b841f2445eab99499299279d5e0e6a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
