@@ -24,6 +24,14 @@ public class PlayerHealth : ShipHealth
         }
     }
 
+    public override void TakeDamage(int damage, bool lethal)
+    {
+        base.TakeDamage(damage, lethal);
+
+        if (GameManager.instance)
+            GameManager.instance.UpdateLifes(life);
+    }
+
     public override void DamageEffect()
     {
         if (BackgroundEffects.instance != null)

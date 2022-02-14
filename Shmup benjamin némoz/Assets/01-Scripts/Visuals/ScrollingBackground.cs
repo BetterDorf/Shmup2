@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ScrollingBackground : MonoBehaviour
 {
-    [SerializeField] float speed = 1.0f;
+    [HideInInspector]
+    public float speed = 1.0f;
 
     SpriteRenderer sp;
 

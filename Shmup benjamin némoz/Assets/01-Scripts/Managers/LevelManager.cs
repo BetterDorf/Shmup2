@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
-using UnityEngine.InputSystem.Interactions;
 
 public class LevelManager : MonoBehaviour
 {

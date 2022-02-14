@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  rotationWhenTurning: 15
 --- !u!114 &8336605280882362938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,11 +302,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 8336605279095628254}
-  projectilesFolderPath: Assets/02-Prefabs/Projectiles/Player/
-  shootProjPath: playerShootProjectile.prefab
-  superShootProjPath: playerShootProjectileS.prefab
-  arrestProjPath: playerArrestProjectile.prefab
-  superArrestProjPath: playerArrestProjectileS.prefab
+  shootProj: {fileID: 5467748810587188061, guid: ab1c44532eb3fa94bba5da77f44a7159, type: 3}
+  superShootProj: {fileID: 3524322063666814325, guid: 6682808b273af3a42a1c1cb342694e3e, type: 3}
+  arrestProj: {fileID: 469914207844060314, guid: aa8d1066b1c5a7046bf8155217ffe4ef, type: 3}
+  superArrestProj: {fileID: 7774349378720751508, guid: 7d6a72ff919baff47a04aa341fc013db, type: 3}
   shootCooldown: 0.2
   chargeTime: 0.5
   chargeEffect: {fileID: 7022046154835281715, guid: f2f87806e1795d0438e38852e38c0d02, type: 3}

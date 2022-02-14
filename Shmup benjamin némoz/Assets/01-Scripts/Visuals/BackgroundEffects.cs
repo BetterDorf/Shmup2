@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BackgroundEffects : MonoBehaviour
 {
+    [SerializeField] float speed = 15.0f;
+
     [SerializeField] Sprite normalSprite;
     [SerializeField] Sprite purpleSprite;
     [SerializeField] Sprite softPurpleSprite;
@@ -12,6 +14,11 @@ public class BackgroundEffects : MonoBehaviour
 
     private void Start()
     {
+        foreach (ScrollingBackground background in transform.GetComponentsInChildren<ScrollingBackground>())
+        {
+            background.speed = speed;
+        }
+
         instance = this;
     }
 

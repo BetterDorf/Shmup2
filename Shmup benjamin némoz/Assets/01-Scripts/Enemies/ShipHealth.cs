@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShipHealth : MonoBehaviour
 {
     [SerializeField] int startLife = 5;
-    int life;
+    protected int life;
 
     private void Start()
     {
@@ -16,6 +16,8 @@ public class ShipHealth : MonoBehaviour
     public virtual void TakeDamage(int damage, bool lethal)
     {
         life -= damage;
+        if (life < 0)
+            life = 0;
 
         if (isDead())
         {

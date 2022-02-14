@@ -8,18 +8,10 @@ public class PlayerActions : MonoBehaviour
 {
     [SerializeField] Transform shootPoint;
 
-    [SerializeField] string projectilesFolderPath;
-    [SerializeField] string shootProjPath;
-    Object shootProj;
-
-    [SerializeField] string superShootProjPath;
-    Object superShootProj;
-
-    [SerializeField] string arrestProjPath;
-    Object arrestProj;
-
-    [SerializeField] string superArrestProjPath;
-    Object superArrestProj;
+    [SerializeField] Object shootProj;
+    [SerializeField] Object superShootProj;
+    [SerializeField] Object arrestProj;
+    [SerializeField] Object superArrestProj;
 
     [SerializeField] float shootCooldown = 0.2f;
     float timeToShoot = 0.0f;
@@ -41,12 +33,6 @@ public class PlayerActions : MonoBehaviour
 
     private void Start()
     {
-        shootProj = AssetDatabase.LoadAssetAtPath(projectilesFolderPath + shootProjPath, typeof(GameObject));
-        superShootProj = AssetDatabase.LoadAssetAtPath(projectilesFolderPath + superShootProjPath, typeof(GameObject));
-
-        arrestProj = AssetDatabase.LoadAssetAtPath(projectilesFolderPath + arrestProjPath, typeof(GameObject));
-        superArrestProj = AssetDatabase.LoadAssetAtPath(projectilesFolderPath + superArrestProjPath, typeof(GameObject));
-
         playerInput = GetComponent<PlayerInput>();
     }
 
