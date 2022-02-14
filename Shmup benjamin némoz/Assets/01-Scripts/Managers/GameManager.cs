@@ -20,11 +20,15 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     int score;
 
+    ScoresHandler scoresHandler;
+
 
     private void Start()
     {
         Time.timeScale = 1.0f;
         instance = this;
+
+        scoresHandler = GetComponent<ScoresHandler>();
     }
 
     public void Pause()
@@ -76,6 +80,19 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0.0f;
         paused = true;
         pausable = false;
+
+        //TODO show highest scores
+
+        //TODO ask for name
+
+        //Temporary for testing
+        string name = "Tester" + Random.Range(0, 100).ToString();
+        Score scoreToInsert = new Score();
+        scoreToInsert.score = score;
+        scoreToInsert.name = name;
+
+        if (scoresHandler.ScoreCanBeInserted(score))
+            scoresHandler.InsertScore(scoreToInsert);
 
         endMenu.SetActive(true);
     }
