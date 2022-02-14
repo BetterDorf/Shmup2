@@ -6,7 +6,8 @@ public class PlayerHealth : ShipHealth
 {
     protected override void Die()
     {
-        BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.softPurple, 0.0f);
+        if (BackgroundEffects.instance != null)
+            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.softPurple, 0.0f);
         Time.timeScale = 0.0f;
     }
 
@@ -25,6 +26,7 @@ public class PlayerHealth : ShipHealth
 
     public override void DamageEffect()
     {
-        BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.purple, 0.2f);
+        if (BackgroundEffects.instance != null)
+            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.purple, 0.2f);
     }
 }

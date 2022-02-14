@@ -158,7 +158,8 @@ public class PlayerActions : MonoBehaviour
     void StopCharging()
     {
         //VFX
-        chargeEffectInstance.GetComponent<Charge>().Release();
+        if (chargeEffectInstance)
+            chargeEffectInstance.GetComponent<Charge>().Release();
 
         charged = false;
         charging = false;
