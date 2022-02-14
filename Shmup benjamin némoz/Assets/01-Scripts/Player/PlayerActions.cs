@@ -55,11 +55,19 @@ public class PlayerActions : MonoBehaviour
 
     public void ShootInput(InputAction.CallbackContext context)
     {
+        if (GameManager.instance)
+            if (GameManager.instance.paused)
+                return;
+
         HandleInput(context, true);
     }
 
     public void ArrestInput(InputAction.CallbackContext context)
     {
+        if (GameManager.instance)
+            if (GameManager.instance.paused)
+                return;
+
         HandleInput(context, false);
     }
 

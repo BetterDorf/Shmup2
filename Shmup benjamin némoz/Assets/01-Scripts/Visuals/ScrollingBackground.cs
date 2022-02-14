@@ -8,6 +8,9 @@ public class ScrollingBackground : MonoBehaviour
     public float speed = 1.0f;
     float realSpeed = 0.0f;
 
+    [HideInInspector]
+    public float timeToMaxSpeed = 10.0f;
+
     SpriteRenderer sp;
 
     private void Start()
@@ -18,10 +21,10 @@ public class ScrollingBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (realSpeed < speed)
-            realSpeed += Time.deltaTime * speed;
-        else
+        if (realSpeed > speed || timeToMaxSpeed <= 0.0f)
             realSpeed = speed;
+        else
+            realSpeed += Time.deltaTime * speed / timeToMaxSpeed;
 
         transform.position += Vector3.down * realSpeed * Time.deltaTime;
     }

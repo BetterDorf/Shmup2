@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance)
+            if (GameManager.instance.paused)
+                return;
+
         float turnValue = playerInput.actions.FindAction("Strafe").ReadValue<float>();
         rb.velocity = new Vector2(speed * turnValue, 0);
 
