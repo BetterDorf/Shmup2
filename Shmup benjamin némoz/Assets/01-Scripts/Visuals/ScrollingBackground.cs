@@ -19,7 +19,9 @@ public class ScrollingBackground : MonoBehaviour
     void Update()
     {
         if (realSpeed < speed)
-            realSpeed += Time.deltaTime;
+            realSpeed += Time.deltaTime * speed;
+        else
+            realSpeed = speed;
 
         transform.position += Vector3.down * realSpeed * Time.deltaTime;
     }

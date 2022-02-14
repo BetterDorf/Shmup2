@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Lasers
+    uniqueID: 369068977
+    locked: 0
   - name: BackGround
     uniqueID: 2906031945
     locked: 0
