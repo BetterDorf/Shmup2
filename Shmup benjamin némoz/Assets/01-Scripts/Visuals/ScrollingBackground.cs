@@ -6,6 +6,7 @@ public class ScrollingBackground : MonoBehaviour
 {
     [HideInInspector]
     public float speed = 1.0f;
+    float realSpeed = 0.0f;
 
     SpriteRenderer sp;
 
@@ -17,7 +18,10 @@ public class ScrollingBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.down * speed * Time.deltaTime;
+        if (realSpeed < speed)
+            realSpeed += Time.deltaTime;
+
+        transform.position += Vector3.down * realSpeed * Time.deltaTime;
     }
 
     private void OnBecameInvisible()
