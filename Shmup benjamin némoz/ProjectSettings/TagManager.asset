@@ -48,6 +48,9 @@ TagManager:
   - name: Bounds
     uniqueID: 588996229
     locked: 0
+  - name: Bonuses
+    uniqueID: 3662756619
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

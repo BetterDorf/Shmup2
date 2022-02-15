@@ -6,7 +6,6 @@ using UnityEngine;
 public class ScoresHandler : MonoBehaviour
 {
     [SerializeField] string path;
-    [SerializeField] TextAsset text;
     [SerializeField] int scoresRecorded = 10;
 
     private void Start()
@@ -83,5 +82,10 @@ public class ScoresHandler : MonoBehaviour
 
         //Write the scores
         Write(highest);
+    }
+
+    public void ResetScores()
+    {
+        Write(new HighestScores());
     }
 }

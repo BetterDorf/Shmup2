@@ -209,6 +209,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructionEffect: {fileID: 6361919857450768824, guid: 0dd98160020c7eb40ac1551d4b52919f, type: 3}
+  silverStar: {fileID: 7475356033270140901, guid: ca5b01a1b2dc41e4284e4ce882068401, type: 3}
+  goldStar: {fileID: 4696438352869636129, guid: f0b795830bf92754baa53026da0a3948, type: 3}
+  starOdds: 0.15
   points: 100
 --- !u!114 &-3552702369125650743
 MonoBehaviour:
