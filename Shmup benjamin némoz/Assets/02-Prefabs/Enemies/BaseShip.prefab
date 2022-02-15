@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLife: 5
+  damageEffectDuration: 0.2
 --- !u!114 &2831820139384326870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b957110ab3934de479bab41f7740fbe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructionEffect: {fileID: 6361919857450768824, guid: 697fc1e248da2694bb12d2a0cf31acf7, type: 3}
+  destructionEffect: {fileID: 6361919857450768824, guid: 0dd98160020c7eb40ac1551d4b52919f, type: 3}
   points: 100
 --- !u!114 &-3552702369125650743
 MonoBehaviour:
@@ -222,4 +223,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 1
+  randomInterval: 0.2
+  startSize: 0.3
   grey: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}

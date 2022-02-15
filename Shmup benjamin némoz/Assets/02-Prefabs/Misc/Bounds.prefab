@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1408056967812695088}
   - component: {fileID: 1408056967812695089}
   - component: {fileID: 1408056967812695090}
+  - component: {fileID: 2009955708}
   m_Layer: 0
   m_Name: RightBound
   m_TagString: Bounds
@@ -71,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 588996229
-  m_SortingLayer: -2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,6 +132,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2009955708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408056967812695084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a35f6c309ceeeb45af348a2a124f1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slidingSpeed: -2
+  offCameraDistance: 5
 --- !u!1 &1408056968582222595
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +158,7 @@ GameObject:
   - component: {fileID: 1408056968582222599}
   - component: {fileID: 1408056968582222592}
   - component: {fileID: 1408056968582222593}
+  - component: {fileID: 1468117699}
   m_Layer: 0
   m_Name: LeftBound
   m_TagString: Bounds
@@ -202,10 +218,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 588996229
-  m_SortingLayer: -2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -262,6 +278,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1468117699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408056968582222595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a35f6c309ceeeb45af348a2a124f1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slidingSpeed: 2
+  offCameraDistance: 5
 --- !u!1 &1408056969213404558
 GameObject:
   m_ObjectHideFlags: 0

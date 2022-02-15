@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3349935331997254579}
   - component: {fileID: 3349935331997254572}
+  - component: {fileID: 168578784}
+  - component: {fileID: 168578785}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,3 +46,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  lifeText: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  endMenu: {fileID: 0}
+  scoreMenu: {fileID: 0}
+  paused: 0
+--- !u!114 &168578784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3349935331997254573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23e273a403cc834095b4377170a089e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: Assets/Resources/HighScores.txt
+  scoresRecorded: 10
+--- !u!114 &168578785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3349935331997254573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4bb8ddd1ffd0141b5217a7714d2ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 0}
+  bounds: {fileID: 0}
+  levelManager: {fileID: 0}

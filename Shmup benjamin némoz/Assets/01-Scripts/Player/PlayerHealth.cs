@@ -9,6 +9,9 @@ public class PlayerHealth : ShipHealth
 
     protected override void Die()
     {
+        GetComponent<AudioSource>().pitch = 1;
+        GetComponent<AudioSource>().Play();
+
         if (GameManager.instance)
             GameManager.instance.Lose();
     }
@@ -54,7 +57,10 @@ public class PlayerHealth : ShipHealth
         StartCoroutine(IFrames()); 
         base.DamageEffect();
 
+        GetComponent<AudioSource>().pitch = 3;
+        GetComponent<AudioSource>().Play();
+
         if (BackgroundEffects.instance != null)
-            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.purple, damageEffectDuration);
+            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.blu, damageEffectDuration);
     }
 }

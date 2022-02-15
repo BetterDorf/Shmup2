@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         Time.timeScale = 1.0f;
         instance = this;
 
@@ -59,20 +60,18 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
+        if (MusicManager.instance)
+            MusicManager.instance.PlayWin();
         endMenu.GetComponentInChildren<Text>().text = "Victory";
-
-        if (BackgroundEffects.instance != null)
-            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.blu, 0.0f);
 
         EndGame();
     }
 
     public void Lose()
     {
+        if (MusicManager.instance)
+            MusicManager.instance.PlayLose();
         endMenu.GetComponentInChildren<Text>().text = "Defeat";
-
-        if (BackgroundEffects.instance != null)
-            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.softPurple, 0.0f);
 
         EndGame();
     }
@@ -89,8 +88,9 @@ public class GameManager : MonoBehaviour
             AskForName();
 
         //show highest scores
+        Cursor.visible = true;
         scoreMenu.SetActive(true);
-        scoreMenu.GetComponent<ScoreMenu>().InitScores(scoresHandler.Read());
+        scoreMenu.GetComponent<ScoreMenu>().InitScores(score, scoresHandler.Read());
     }
 
     void AskForName()

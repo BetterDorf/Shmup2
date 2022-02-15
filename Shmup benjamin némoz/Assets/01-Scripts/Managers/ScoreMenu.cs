@@ -7,8 +7,10 @@ public class ScoreMenu : MonoBehaviour
 {
     [SerializeField] GameObject scoreVisual;
 
-    public void InitScores(HighestScores highest)
+    public void InitScores(int points, HighestScores highest)
     {
+        transform.Find("YourScore").GetComponent<Text>().text = "Your Score : " + points.ToString();
+
         int i = 0;
         foreach (var score in highest.scores)
         {

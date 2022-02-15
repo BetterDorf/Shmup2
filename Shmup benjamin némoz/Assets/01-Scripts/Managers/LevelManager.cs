@@ -56,4 +56,13 @@ public class LevelManager : MonoBehaviour
         //No need to spawn more levels
         this.enabled = false;
     }
+
+    public void StopAllEnemies()
+    {
+        foreach (var enemy in _enemyOnScreen)
+        {
+            enemy.GetComponent<ShipBehaviour>().enabled = false;
+            enemy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        }
+    }
 }

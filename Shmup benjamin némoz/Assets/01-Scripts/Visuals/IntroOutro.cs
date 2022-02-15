@@ -22,15 +22,34 @@ public class IntroOutro : MonoBehaviour
             if (levelManager)
                 levelManager.SetActive(true);
         }
-
-        foreach (Bounds bound in bounds.GetComponentsInChildren<Bounds>())
+        else
         {
-            bound.Intro(FinishedIntro);
+            foreach (Bounds bound in bounds.GetComponentsInChildren<Bounds>())
+            {
+                bound.Intro(FinishedIntro);
+            }
         }
     }
 
     public void Outro()
     {
+        //Had I more time, everything would work in reverse, they would check on this if the game was over and
+        //adjust their behaviour accordingly instead of being made to stop from this.
+        
+        //Stop the enemies from moving
+        levelManager.GetComponent<LevelManager>().StopAllEnemies();
+        levelManager.GetComponent<LevelManager>().enabled = false;
+
+        //Stop the player from playing
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<PlayerActions>().enabled = false;
+        player.GetComponent<PlayerHealth>().enabled = false;
+        player.GetComponent<Collider2D>().enabled = false;
+
+        if (BackgroundEffects.instance != null)
+            BackgroundEffects.instance.ChangeBackground(BackgroundEffects.Type.blu, 0.0f);
+
         //Remove the ui
         if (ui)
             ui.SetActive(false);
@@ -40,8 +59,10 @@ public class IntroOutro : MonoBehaviour
         {
             bound.Outro();
         }
+
     }
 
+    //Called back by the bounds when they are done being animated
     public void FinishedIntro()
     {
         if (boundCompleted)

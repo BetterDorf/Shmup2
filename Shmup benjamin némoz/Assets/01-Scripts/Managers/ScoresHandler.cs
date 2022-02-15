@@ -6,7 +6,19 @@ using UnityEngine;
 public class ScoresHandler : MonoBehaviour
 {
     [SerializeField] string path;
+    [SerializeField] TextAsset text;
     [SerializeField] int scoresRecorded = 10;
+
+    private void Start()
+    {
+        path = Application.persistentDataPath + path;
+
+        //Create the highscores file if it doesn't already exist
+        if (!File.Exists(path))
+        {
+            Write(new HighestScores());
+        }
+    }
 
     public void Write(HighestScores highestScores)
     {
@@ -15,7 +27,9 @@ public class ScoresHandler : MonoBehaviour
         StreamWriter writer = new StreamWriter(path, false);
         writer.Write(jsonFormat);
 
+        //Update the resource so that the game has knowledge of it
         Resources.Load(path);
+
         writer.Close();
     }
 
