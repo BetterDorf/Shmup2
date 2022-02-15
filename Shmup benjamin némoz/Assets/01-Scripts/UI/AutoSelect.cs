@@ -8,6 +8,6 @@ public class AutoSelect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Button>().Select();   
+        GetComponent<Selectable>().Select();
     }
 }

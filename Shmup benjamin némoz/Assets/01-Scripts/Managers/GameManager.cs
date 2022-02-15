@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject endMenu;
+    [SerializeField] GameObject scoreMenu;
 
     [HideInInspector]
     public bool paused = false;
@@ -22,13 +23,14 @@ public class GameManager : MonoBehaviour
 
     ScoresHandler scoresHandler;
 
-
     private void Start()
     {
         Time.timeScale = 1.0f;
         instance = this;
 
         scoresHandler = GetComponent<ScoresHandler>();
+
+        GetComponent<IntroOutro>().Intro();
     }
 
     public void Pause()
@@ -77,24 +79,37 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
-        Time.timeScale = 0.0f;
         paused = true;
         pausable = false;
 
-        //TODO show highest scores
+        GetComponent<IntroOutro>().Outro();
 
-        //TODO ask for name
-
-        //Temporary for testing
-        string name = "Tester" + Random.Range(0, 100).ToString();
-        Score scoreToInsert = new Score();
-        scoreToInsert.score = score;
-        scoreToInsert.name = name;
-
+        //If the score is a high score, ask for the name
         if (scoresHandler.ScoreCanBeInserted(score))
-            scoresHandler.InsertScore(scoreToInsert);
+            AskForName();
 
-        endMenu.SetActive(true);
+        //show highest scores
+        scoreMenu.SetActive(true);
+        scoreMenu.GetComponent<ScoreMenu>().InitScores(scoresHandler.Read());
+    }
+
+    void AskForName()
+    {
+        scoreMenu.transform.Find("Next").GetComponent<AutoSelect>().enabled = false;
+        scoreMenu.transform.Find("InputField").gameObject.SetActive(true);
+    }
+
+    //Called when the 'next' button is pressed on the high score screen
+    public void TakeName()
+    {
+        if (scoresHandler.ScoreCanBeInserted(score))
+        {
+            string name = scoreMenu.transform.Find("InputField").Find("Text").GetComponent<Text>().text;
+            Score scoreToInsert = new Score();
+            scoreToInsert.score = score;
+            scoreToInsert.name = name;
+            scoresHandler.InsertScore(scoreToInsert);
+        }
     }
 
     public void AddScore(int amount)

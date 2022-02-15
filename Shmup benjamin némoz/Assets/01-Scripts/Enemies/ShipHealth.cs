@@ -5,13 +5,13 @@ using UnityEngine;
 public class ShipHealth : MonoBehaviour
 {
     Color hurtColor = Color.red;
-    Color baseColor;
+    bool hurtAnim = false;
 
     [SerializeField] int startLife = 5;
     protected int life;
 
     [SerializeField] protected float damageEffectDuration = 0.2f;
-    SpriteRenderer sp;
+    protected SpriteRenderer sp;
 
     private void Start()
     {
@@ -20,15 +20,12 @@ public class ShipHealth : MonoBehaviour
         if (!sp)
             sp = GetComponentInChildren<SpriteRenderer>();
 
-        baseColor = sp.color;
         life = startLife;
     }
 
     //Take damages then trigger the death if at 0
     public virtual void TakeDamage(int damage, bool lethal)
     {
-        DamageEffect();
-
         life -= damage;
         if (life < 0)
             life = 0;
@@ -40,19 +37,29 @@ public class ShipHealth : MonoBehaviour
             else
                 Arrest();
         }
+        else
+        {
+            DamageEffect();
+        }
     }
 
     public virtual void DamageEffect()
     {
-        StartCoroutine(hurtChangeColor());
+        if (!hurtAnim)
+        {
+            StartCoroutine(hurtChangeColor());
+            hurtAnim = true;
+        }
     }
 
     IEnumerator hurtChangeColor()
     {
+        Color baseColor = sp.color;
         sp.color = hurtColor;
         yield return new WaitForSeconds(damageEffectDuration);
 
         sp.color = baseColor;
+        hurtAnim = false;
     }
 
     protected bool isDead()
